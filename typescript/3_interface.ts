@@ -28,3 +28,11 @@ let sum: SumFunction;
 sum = function(a: number, b: number): number {
     return a + b;
  }
+
+// 인덱싱에 인터페이스를 활용
+interface StringArray {
+    [index: number]: string;
+}
+
+const testArr : StringArray = ['a', 'b', 'c'];
+testArr[0] = 10; // interface 위반
