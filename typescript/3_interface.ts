@@ -36,3 +36,14 @@ interface StringArray {
 
 const testArr : StringArray = ['a', 'b', 'c'];
 testArr[0] = 10; // interface 위반
+
+
+// 딕셔너리 패턴
+interface StringRegexDictionary {
+    [key: string]: RegExp;
+}
+
+const newObj: StringRegexDictionary = {
+    // cssFile: 'css';  interface 위반
+    cssFile: /\.css$/,
+}
