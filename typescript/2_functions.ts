@@ -13,3 +13,5 @@ function add(): number {
 function min(a: number, b: number): number {
     return a - b;
 }
+
+min(3, 1, 0, 4); // js로 변환 시 초과된 인수에 관한 에러 출력
