@@ -19,3 +19,21 @@ function logMessage(value: string | number) {
 }
 logMessage('hello');
 logMessage(100);
+
+
+
+// 유니온 타입의 특징
+interface Developer {
+    name: string;
+    skill: string;
+}
+
+interface Person {
+    name: string;
+    age: number;
+}
+
+function askSomeone(someone: Developer | Person) {
+    someone.name;
+    someone.skill; // 위반
+}
