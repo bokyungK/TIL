@@ -33,12 +33,20 @@ interface Person {
     age: number;
 }
 
+// union type
 function askSomeone(someone: Developer | Person) {
     someone.name;
-    someone.skill; // 위반
 }
+// 호출 관점
+askSomeone({ name: 'developer', skill: 'typescript' });
+askSomeone({ name: 'designer', age: 25 });
 
+
+// inersection type
 function askSomeone(someone: Developer & Person) {
     someone.name;
-    someone.skill; // 접근 가능
+    someone.skill;
 }
+// 호출 관점
+askSomeone({ name: 'developer', skill: 'typescript'}); // age까지 넘기지 않아 eslint error
+askSomeone({ name: 'developer', skill: 'typescript', age: 25}); 
