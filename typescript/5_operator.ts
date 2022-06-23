@@ -37,3 +37,8 @@ function askSomeone(someone: Developer | Person) {
     someone.name;
     someone.skill; // 위반
 }
+
+function askSomeone(someone: Developer & Person) {
+    someone.name;
+    someone.skill; // 접근 가능
+}
