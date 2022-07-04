@@ -1,15 +1,25 @@
-// function logText<T>(text: T):T {
-//     console.log(text);
-//     return text;
-// }
-// logText('하이'); // text의 타입을 인수에서 전달
-// logText<string>('Hi'); // 명시적으로 타입 전달
+// interface with generic
 
-function logText<T>(text: T): T {
-    console.log(text);
-    return text;
+    // first example : no generic
+// interface Dropdown {
+//     value: string,
+//     selected: boolean
+// }
+
+    // second example : use generic
+interface Dropdown<T> {
+    value: T;
+    selected: boolean;
+}
+const obj: Dropdown<number> = { // set generic type for interface "Dropdown"
+    value: 10,
+    selected: true
 }
 
-const str = logText<string>('abc');
-str.split('');
-const login = logText<bolean>(true);
+
+// how to restrict type with generic
+function logTextLength<T>(text: T[]): T[] {
+    console.log(text.length); // error
+    return text;
+}
+logTextLength<string>(['hi']);
