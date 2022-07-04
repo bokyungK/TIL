@@ -17,9 +17,20 @@ const obj: Dropdown<number> = { // set generic type for interface "Dropdown"
 }
 
 
-// how to restrict type with generic
-function logTextLength<T>(text: T[]): T[] {
-    console.log(text.length); // error
+// how to restrict type of generic (1)
+// function logTextLength<T>(text: T[]): T[] {
+//     console.log(text.length); // error
+//     return text;
+// }
+// logTextLength<string>(['hi']);
+
+// how to restrict type of generic (2) : use defined type
+interface LengthType {
+    length: number;
+}
+function logTextLength<T extends LengthType>(text: T): T {
+    text.length;
     return text;
 }
-logTextLength<string>(['hi']);
+logTextLength(10); // error
+logTextLength({ length: 10 })
