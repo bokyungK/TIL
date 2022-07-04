@@ -34,3 +34,16 @@ function logTextLength<T extends LengthType>(text: T): T {
 }
 logTextLength(10); // error
 logTextLength({ length: 10 })
+
+// how to restrict type of generic (3) : use keyof
+interface ShoppingItem {
+    name: string;
+    price: number;
+    stock: number;
+}
+
+function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption: T): T {
+    return itemOption;
+}
+getShoppingItemOption('name'); // ShoppingItem의 키 값 중 하나만 제네릭 타입으로 넘길 수 있음
+getShoppingItemOption('price');
