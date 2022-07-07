@@ -1,7 +1,14 @@
-// my answer
+// instructor's explanation
+enum PhoneType {
+  home = 'home',
+  Office = 'office',
+  Studio = 'studio',
+}
 
 interface PhoneNumberDictionary {
-  [home: string]: { num: number };
+  [phone: string]: {
+    num: number;
+  };
 }
 
 interface Contact {
@@ -77,8 +84,8 @@ class AddressBook {
   findContactByAddress(address: string): Contact[] {
     return this.contacts.filter(contact => contact.address === address);
   }
-
-  findContactByPhone(phoneNumber: number, phoneType: string): Contact[] {
+  // home, office ,studio
+  findContactByPhone(phoneNumber: number, phoneType: PhoneType): Contact[] {
     return this.contacts.filter(
       contact => contact.phones[phoneType].num === phoneNumber
     );
