@@ -2,6 +2,6 @@
     "compilerOptions": {
                  "allowJs": true,
                  "checkJs": true,
-                 "noImplicitAny": true
+                //  "noImplicitAny": true
                 }
 }
