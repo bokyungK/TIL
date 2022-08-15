@@ -1,5 +1,6 @@
-const readline = require("readline");
+// <두 수 비교하기>
 
+const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
