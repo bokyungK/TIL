@@ -1,4 +1,4 @@
-// 2675 문자열 반복
+// 2675 | 문자열 반복
 
 let fs = require('fs');
 let inputs = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
