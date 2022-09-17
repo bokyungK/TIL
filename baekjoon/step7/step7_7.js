@@ -1,4 +1,5 @@
 // 2839 | 설탕 배달
+
 const fs = require('fs');
 const input= fs.readFileSync('/dev/stdin').toString().trim();
 const N = Number(input);
